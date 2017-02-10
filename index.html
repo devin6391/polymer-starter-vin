@@ -18,16 +18,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <title>My App</title>
     <meta name="description" content="My App description">
 
-    <link rel="icon" href="/images/favicon.ico">
+    <!-- <link rel="icon" href="/images/favicon.ico"> -->
 
     <!-- See https://goo.gl/OOhYW5 -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- <link rel="manifest" href="/manifest.json"> -->
 
     <!-- See https://goo.gl/qRE0vM -->
-    <meta name="theme-color" content="#3f51b5">
+    <!-- <meta name="theme-color" content="#3f51b5"> -->
 
     <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
-    <meta name="mobile-web-app-capable" content="yes">
+    <!-- <meta name="mobile-web-app-capable" content="yes"> -->
     <meta name="application-name" content="My App">
 
     <!-- Add to homescreen for Safari on iOS -->
@@ -94,7 +94,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // }
     </script>
 
-    <link rel="import" href="/src/my-app.html">
+    <link rel="import" href="/app/my-app.html">
 
     <style>
       body {
@@ -123,7 +123,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
   </head>
   <body>
-    <my-app></my-app>
+    <app-header></app-header>
+    <my-app toggle-icon="star" pressed></my-app>
+    <my-app toggle-icon="star"></my-app>
+    <my-app toggle-icon="polymer"></my-app>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>

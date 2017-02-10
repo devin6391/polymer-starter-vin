@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<dom-module id="app-header">
+  <template>
+    <style>
+      :host {
+        background: #fff;
+      }
+      paper-header-panel {
+        --paper-header-panel-scroll-container: {
+          border: 1px solid gray;
+          background: #fff;
+        };
+        --paper-header-panel-body: {
+          background: #fff;
+        };
+        --paper-header-panel: {
+          background: #fff;
+        }
+      }
+      paper-toolbar {
+        --paper-toolbar-background: #fff;
+      }
+    </style>
+    <paper-header-panel class="flex" mode="standard">
+      <paper-toolbar>
+        <iron-image style="width:400px; height:400px; background-color: lightgray;" sizing="cover" preload src="http://lorempixel.com/600/400"></iron-image>
+      </paper-toolbar>
+    </paper-header-panel>
+  </template>
+  <script>
+    Polymer({
+      /* this is the element's prototype */
+      is: 'app-header',
+      properties: {
+      },
+      listeners: {
+      },
+    });
+  </script>
+</dom-module>
