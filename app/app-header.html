@@ -11,27 +11,51 @@
         --paper-header-panel-scroll-container: {
           border: 1px solid gray;
           background: #fff;
+
         };
         --paper-header-panel-body: {
-          background: #fff;
+          height: 80px;
         };
         --paper-header-panel: {
           background: #fff;
+          width: 750px;
+          margin: auto;
+          height: 80px;
+          flex-direction: column;
+          display: flex;
         }
       }
       paper-toolbar {
+        /*width: 100vw;*/
         --paper-toolbar-background: #fff;
+        height: 80px;
+        display: flex;
+        /*justify-content: space-between;*/
+        /*margin: auto;*/
+      }
+      --paper-toolbar-content {
+        margin: auto;
+      }
+      .images {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin:auto;
+        padding: 0 50px;
       }
     </style>
     <paper-header-panel class="flex" mode="standard">
       <paper-toolbar>
-        <iron-image style="width:400px; height:400px; background-color: lightgray;" sizing="cover" preload src="http://lorempixel.com/600/400"></iron-image>
+        <div class="images">
+          <iron-image style="width:120px; height:40px;" sizing="contain" preload src="../images/freecharge.png"></iron-image>
+          <iron-image style="width:120px; height:40px;" sizing="contain" preload src="../images/merchant.png"></iron-image>
+        </div>
+        <paper-progress class="middle fit" value="60"></paper-progress>
       </paper-toolbar>
     </paper-header-panel>
   </template>
   <script>
     Polymer({
-      /* this is the element's prototype */
       is: 'app-header',
       properties: {
       },

@@ -1,0 +1,29 @@
+<link rel="import" href="./top-offer.html">
+
+<dom-module id="top-offers">
+  <template>
+    <style>
+      :host {
+
+      }
+      .offers-container {
+        
+      }
+    </style>
+    <div class="offers-container">
+      <template is="dom-repeat" items={{offerArr}} as="offer">
+        <top-offer offer-text=[[offer]]></top-offer>
+      </template>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: "top-offers",
+      properties: {
+        offerArr: {
+          type: Array
+        }
+      }
+    });
+  </script>
+</dom-module>

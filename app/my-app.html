@@ -1,49 +1,33 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="/app/top-offers.html">
 
-<!-- this is required for iron-icon image:transform to work ----->
-<link rel="import" href="../bower_components/iron-icons/image-icons.html">
-<!---------------------------------------------->
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
-<link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
-
-<link rel="import" href="./app-header.html">
+<link rel="import" href="../styles/style1.css.html">
+<link rel="import" href="../styles/sprites.css.html">
 
 <dom-module id="my-app">
   <template>
+    <style include="login-sprites"></style>
+    <style include="login-style"></style>
     <style>
-      /* local DOM styles go here */
       :host {
         display: inline-block;
-        --icon-toggle-color: lightgrey;
-        --icon-toggle-outline-color: black;
-        --icon-toggle-pressed-color: red;
-      }
-      iron-icon {
-        fill: var(--icon-toggle-color, rgba(0,0,0,0));
-        stroke: var(--icon-toggle-outline-color, currentcolor);
-      }
-      :host([pressed]) iron-icon {
-        fill: var(--icon-toggle-pressed-color, currentcolor);
+        background: #faf9f9;
+        width: 100%;
       }
     </style>
-    <!-- local DOM goes here -->
-    <iron-icon icon="[[toggleIcon]]"></iron-icon>
+    <top-offers offer-arr=[[offersArray]]></top-offers>
   </template>
   <script>
     Polymer({
       /* this is the element's prototype */
       is: 'my-app',
+      ready: function() {
+        this.offersArray = ["My Offer Number 1", "Your Offer Number 2"];
+      },
       properties: {
-        toggleIcon: String,
-        pressed: {
-          type: Boolean,
-          value: false,
-          notify: true,
-          reflectToAttribute: true
-        }
+        offersArray: Array
       },
       listeners: {
         'tap': 'toggle'

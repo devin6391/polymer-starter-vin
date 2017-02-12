@@ -1,0 +1,101 @@
+.fc-login {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.fc-login-back-arrow {
+    width: 26px;
+    height: 48px;
+    background-position: -5px -5px;
+}
+
+.fc-login-check {
+    width: 25px;
+    height: 19px;
+    background-position: -41px -5px;
+}
+
+.fc-login-email1 {
+    width: 60px;
+    height: 42px;
+    background-position: -76px -5px;
+}
+
+.fc-login-email2 {
+    width: 60px;
+    height: 42px;
+    background-position: -146px -5px;
+}
+
+.fc-login-eye {
+    width: 74px;
+    height: 63px;
+    background-position: -216px -5px;
+}
+
+.fc-login-facebook {
+    width: 20px;
+    height: 33px;
+    background-position: -300px -5px;
+}
+
+.fc-login-footer-logo {
+    width: 1004px;
+    height: 101px;
+    background-position: -5px -78px;
+}
+
+.fc-login-googleplus {
+    width: 35px;
+    height: 35px;
+    background-position: -330px -5px;
+}
+
+.fc-login-info {
+    width: 83px;
+    height: 83px;
+    background-position: -5px -189px;
+}
+
+.fc-login-offer {
+    width: 108px;
+    height: 108px;
+    background-position: -98px -189px;
+}
+
+.fc-login-password-off {
+    width: 45px;
+    height: 60px;
+    background-position: -375px -5px;
+}
+
+.fc-login-password-on {
+    width: 45px;
+    height: 60px;
+    background-position: -430px -5px;
+}
+
+.fc-login-phone {
+    width: 38px;
+    height: 57px;
+    background-position: -485px -5px;
+}
+
+.fc-login-popup-arrow {
+    width: 36px;
+    height: 20px;
+    background-position: -533px -5px;
+}
+
+.fc-login-user1 {
+    width: 56px;
+    height: 56px;
+    background-position: -579px -5px;
+}
+
+.fc-login-user2 {
+    width: 56px;
+    height: 56px;
+    background-position: -645px -5px;
+}

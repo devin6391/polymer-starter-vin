@@ -2,6 +2,7 @@
   "name": "polymer-starter-kit",
   "license": "BSD-3-Clause",
   "devDependencies": {
+    "browser-sync": "^2.18.7",
     "del": "^2.2.2",
     "eslint": "^3.12.0",
     "eslint-config-google": "^0.7.1",
@@ -17,7 +18,7 @@
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "npm run lint && polymer test",
     "html-min": "node ./html-min.js",
-    "start": "polymer serve",
+    "start": "browser-sync start --proxy localhost:8080 --files 'app/*.html, app/*.js'",
     "serve:prod": "http-serve ./build/bundled",
     "serve:unbundled": "polymer serve ./build/unbundled",
     "build": "polymer build && npm run html-min",

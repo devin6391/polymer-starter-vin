@@ -1,0 +1,216 @@
+<dom-module id="login-style">
+  <template>
+    <style>
+    @charset "UTF-8";
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
+
+    p,div,section,span,body{margin:0px; padding:0px;}
+    body{background-color:#f3f3f3;font-family: 'Source Sans Pro', sans-serif;}
+    .cb{clear:both;}
+    *{outline:0;box-sizing:border-box}
+    a{color:#EF714C; text-decoration:none;}
+    cite{font-style:normal; margin-right:2px;}
+    ::-webkit-input-placeholder {color: #d6d6d6;}
+    :-moz-placeholder { color: #d6d6d6;  }
+    ::-moz-placeholder { color: #d6d6d6;  }
+    :-ms-input-placeholder {  color: #d6d6d6;  }
+    *,:after,:before{box-sizing:border-box}
+    .checkbox{float: left;}
+    .info-popup:before {position: absolute;content: "";width: 30px;height: 33px;background: url(../images/popup-arrow.png) no-repeat;
+    background-size: 26px;top: 116px;left: 167px;}
+    .checkbox label {display: inline-block;cursor: pointer;position: relative;padding-left: 25px;margin-right: 15px;
+    padding-bottom: 2px; }
+    .bg-popup{position:fixed; height:100%; width:100%; background:#000; opacity:.3; top:0px; left:0px; z-index:200; display:none;}
+    .checkbox > input{display:none;}
+    .checkbox label:before {content: "";display: inline-block;width: 17px;height: 17px;margin-right: 10px;position: absolute;left: 0;
+    bottom: 1px;border:solid 1px #e1e1e1;border-radius:2px;}
+    .checkbox input[type=checkbox]:checked + label:before {content: "";text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);font-size: 15px;
+    color: #f3f3f3;text-align: center;line-height: 15px;background:url("../images/check.png") no-repeat #e3714d;border:solid 1px #e3714d;
+    background-size: 11px;background-position: 2px 4px;}
+
+    .main{width:750px; margin:0px auto 0; background:#faf9f9;}
+    .logo-area{background:#fff; height:80px; display:table; width:100%; padding:0 50px;}
+    .freecharge-logo ,.merchant-logo{display:table-cell; vertical-align:middle;}
+    .merchant-logo{text-align:right;}
+    .freecharge-logo img{width:120px;}
+    .merchant-logo img{width:120px;}
+    .top-offer{width:70%;margin: 30px auto 0;}
+    .top-offer p{border:#e0e0e0  solid 1px;  padding:15px;background:#fff; width:100%;font:400 16px/24px 'Source Sans Pro', sans-serif; color:#5C5C5C; background:url(../images/offer.png) no-repeat #fff; background-size:30px;background-position: 15px 12px;
+    padding-left:70px}
+    .you-pay-cont{float:right; margin-top:20px}
+    .you-pay-cont > div{font:400 14px/16px 'Source Sans Pro', sans-serif; color:#5f5f5f; float:left; text-align:right;}
+    .you-pay-cont > div span{display:block;font:400 18px/20px 'Source Sans Pro', sans-serif; color:#e3714d}
+    .you-pay-cont > div.info{float:right; margin:5px 0 0 5px; position:relative; }
+    .you-pay-cont > div.info > img{width:20px;z-index:250; position:relative;}
+
+    .info-popup{position: absolute;width: 225px;background: #fff;z-index:250;top: -124px;left: -170px;box-shadow: 0px 1px 1px #ccc;border-radius: 3px; display:none;}
+    .info-popup table tr:first-child td{padding-bottom:0px;}
+    .info-popup table tr td{text-align:left; padding:15px 15px; color:#979797;}
+    .info-popup table tr.last td{border-top:solid 1px #ccc; padding:12px 15px; color:#5C5C5C;}
+    .you-pay-cont > div.info:hover > .info-popup{display:block;}
+    .login-flow{width:100%; float:left; padding-bottom:40px;}
+    .login-flow h2{font:600 16px/16px 'Source Sans Pro', sans-serif; text-align:center; position:relative; margin-bottom:30px;}
+    .login-flow h2:after{content:""; width:24px; height:3px; background:#e3714d; position:absolute; left:50%;top: 25px;margin-left: -12px;}
+    .wrapper{width:420px; margin:0 auto;}
+    .form-cont {margin-top:10px;}
+    .login-flow .form-cont:first-of-type{margin-bottom:0px;}
+    .form-cont input{border:#e0e0e0  solid 1px; padding:16px;font:300 14px/16px 'Source Sans Pro', sans-serif; padding-left:55px; width:100%; color:#ACACAC;}
+    .form-cont.error input{border:#C74327 solid 1px;}
+    .form-cont.error > span{display:block}
+    .user{background:url(../images/user1.png) no-repeat #fff;    background-size: 17px;background-position: 15px 17px;}
+    .user:focus{background-image:url(../images/user2.png)}
+    .password{background:url(../images/password-off.png) no-repeat  15px 15px/14px, url(../images/eye.png) no-repeat 95% 15px/20px #fff;    }
+    .password:focus{background:url(../images/password-on.png) no-repeat  15px 15px/14px, url(../images/eye.png) no-repeat 95% 15px/20px #fff;    }
+    .email{background:url(../images/email1.png) no-repeat #fff;    background-size: 19px;background-position: 15px 18px;}
+    .email:focus{background-image:url(../images/email2.png)}
+    .mobile{background:url(../images/phone.png) no-repeat #fff;    background-size: 12px;background-position: 17px 15px;}
+    .form-cont span{font:400 12px/16px 'Source Sans Pro', sans-serif; color:#C74327; display:none;    margin-top: 5px;}
+    .login-flow .submit{background:#e3714d; border-radius:2px; border:none; padding:16px; width:100%; color:#fff;font:300 16px/16px 'Source Sans Pro', sans-serif; margin:30px 0 0;}
+    .stay-forgot{margin-top:20px; float:left; width:100%;}
+    .stay-forgot .stay-sign{float:left; color:#858585;font:300 14px/16px 'Source Sans Pro', sans-serif;}
+    .stay-forgot .forgot-password{float:right; color:#858585;font:300 14px/16px 'Source Sans Pro', sans-serif; }
+    .stay-forgot + .submit{margin: 15px 0 0;}
+
+    .login-flow .sec-button{border:solid 1px #ED704E;background:none; border-radius:2px; padding:16px; width:100%; color:#ED704E;font:300 16px/16px 'Source Sans Pro', sans-serif; margin:30px 0 0;}
+    .form-cont.otp-cont{margin-top: 10px;
+        float: left;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px!important;}
+    .otp-top-msz, .count-down , .p-msz , .TnC{color:#979797;font:300 14px/22px 'Source Sans Pro', sans-serif; text-align:center; margin-bottom:20px; float:left; width:100%;}
+    .count-down{margin-bottom:10px;}
+    .p-msz{margin:15px 0 0 0 ; text-align:left;font:300 12px/18px 'Source Sans Pro', sans-serif;}
+    .otp-top-msz span , .p-msz span , .TnC span{color:#6F6F6F;font:400 14px/22px 'Source Sans Pro', sans-serif;}
+    .TnC{margin-top:20px;}
+    .p-msz span{font:400 12px/18px 'Source Sans Pro', sans-serif;}
+    .otp-cont input{width:55px; height:60px; padding:0px; border-radius:3px;margin-left: 20px;  text-align:center; font-size:30px; line-height:20px; color:#333; font-weight:bold;}
+    .otp-cont input:first-child{margin-left: 0px;}
+    .or-cont{position:relative; height:30px; text-align:center; margin-top:30px;}
+    .or-cont p{height:1px; display:block; background:#e0e0e0; font-size:0px; position:absolute; top:50%; width:100%;}
+    .or-cont span{background: #fff;
+      background: #fff;
+        border-radius: 50px;
+        position: relative;
+        top: -9px;
+        padding: 5px 0 0 0;
+        height: 50px;
+        width: 50px;
+        color: #858585;
+        font-size: 14px;
+        display: block;
+        border: 10px solid #faf9f9;
+        left: 50%;
+        margin-left: -25px;
+        font-weight: 300;
+      }
+    .login-flow .back-merchant{font:300 14px/16px 'Source Sans Pro', sans-serif; text-align:center;margin:20px 0 0 0;}
+    .login-flow .back-merchant a{text-decoration:none; color:#e3714d; background: url(../images/back-arrow.png) no-repeat;background-size: 7px;background-position: -0px;padding-left: 13px;}
+    .social-cont{margin-top:40px;}
+    .social-cont span{display:block; text-align:center; font:300 14px/16px 'Source Sans Pro', sans-serif; color:#a5a5a5; margin-bottom:30px;}
+    .facebook , .google{background:#4d5f9b;font:400 16px/16px 'Source Sans Pro', sans-serif; color:#fff; text-decoration:none;    border-radius: 2px;
+    display:inline-block; width:180px; padding:15px 0; text-align:center;}
+    .google{background:url(../images/googleplus.png) no-repeat 37px 15px/18px #c6502f; float:right;}
+    .facebook{background:url(../images/facebook.png) no-repeat 37px 14px/11px #4d5f9b;}
+    .footer{text-align:center; background-color:#f3f3f3; padding:50px 0;}
+    .footer p{font:300 13px/16px 'Source Sans Pro', sans-serif;color:#858585; padding-bottom:10px;}
+
+
+
+    .ripplelink {
+
+      position: relative;
+      overflow: hidden;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      z-index: 0;
+    }
+
+    .ripplelink:hover {
+     /* z-index: 1000;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 8px 8px 0;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 8px 8px 0;
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;*/
+    }
+
+    .ink {
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 100%;
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+
+    .animate {
+      -webkit-animation: ripple 0.65s linear;
+      -moz-animation: ripple 0.65s linear;
+      -ms-animation: ripple 0.65s linear;
+      -o-animation: ripple 0.65s linear;
+      animation: ripple 0.65s linear;
+    }
+     @-webkit-keyframes
+    ripple {  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    }
+    }
+    @-moz-keyframes
+    ripple {  100% {
+    opacity: 0;
+    -moz-transform: scale(2.5);
+    }
+    }
+    @-o-keyframes
+    ripple {  100% {
+    opacity: 0;
+    -o-transform: scale(2.5);
+    }
+    }
+    @keyframes
+    ripple {  100% {
+    opacity: 0;
+    transform: scale(2.5);
+    }
+    }
+
+
+
+    @media screen and (max-width:750px){
+      .main{width:100%;}
+      .top-offer{width:550px;}
+
+      }
+    @media screen and (max-width:600px){
+      .main{margin:0px; background:#f0f4f5;}
+      .wrapper{width:100%; padding:0 25px;}
+      .top-offer{width:100%;padding:0 25px;}
+      .or-cont span{border-color:#f0f4f5}
+      .info-popup{left: -190px;}
+      .you-pay-cont > div.info:hover > .bg-popup{display:block;}
+      .info-popup{box-shadow: 0px 1px 1px #666;}
+      .social-cont{display:none;}
+      .logo-area {padding: 10px 25px 0;height: 60px;}
+      .freecharge-logo img{width:80px;}.merchant-logo img{width:80px;}
+      .top-offer{display:table;}
+      .top-offer p{    background-size: 25px;    padding: 0px 15px;padding-left: 50px;background-position: 12px 12px;    font: 400 12px/16px 'Source Sans Pro', sans-serif; height:50px; display:table-cell; vertical-align:middle;}
+      .login-flow .back-merchant {font: 300 13px/16px 'Source Sans Pro', sans-serif;text-align: center;margin: 30px 0 0 0;}
+      .form-cont input{font: 300 13px/16px 'Source Sans Pro', sans-serif; padding-left:50px;    padding-top: 15px;}
+      .otp-cont input{padding-left:0px;font-size:30px; line-height:20px; color:#333; font-weight:bold; padding-top:0px;}
+      .user {background-size: 14px;background-position: 16px 16px;}
+      .info-popup:before {left: 187px;}
+      .top-offer{margin: 20px auto 0;}
+      }
+
+      @media screen and (max-width:350px){
+          .otp-cont input{  margin-left: 12px;}
+          .footer img{width:80%;}
+
+        }
+
+    </style>
+  </template>
+</dom-module>
